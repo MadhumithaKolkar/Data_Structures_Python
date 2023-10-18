@@ -86,6 +86,38 @@ class Linked_List:
         self.head = None
         return
 
+    def insert_after_value(self,data_after,data_to_insert):
+        iteration = self.head
+        string_in = False
+
+        while iteration:
+            print(iteration.data + " XX " +str(data_after))
+            if iteration.data == data_after:
+                iteration.next = Node(data_to_insert,iteration.next)
+                string_in = True
+                break
+            iteration = iteration.next
+        # if string_in == False:
+        #     raise Exception("Value not in list")
+        # return
+
+    # def insert_after_value(self, data_after, data_to_insert):
+    #     print('XXXXXXXXXXXX')
+    #     if self.head is None:
+    #         return
+    #
+    #     if self.head.data == data_after:
+    #         self.head.next = Node(data_to_insert, self.head.next)
+    #         return
+    #
+    #     itr = self.head
+    #     while itr:
+    #         if itr.data == data_after:
+    #             itr.next = Node(data_to_insert, itr.next)
+    #             break
+    #
+    #         itr = itr.next
+
 if __name__ == '__main__':
     ll = Linked_List()
     ll.add_list(['Hello','What','are','you','1'])
@@ -102,4 +134,10 @@ if __name__ == '__main__':
     ll.insert_at_end(99)
     ll.print()
     ll.clear()
+    ll.print()
+    ll.clear()
+    ll.insert_at_start('Bug')
+    ll.add_list([1,2,3,4])
+    ll.print()
+    ll.insert_after_value(3,'Heythere')
     ll.print()
