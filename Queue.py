@@ -24,7 +24,8 @@ class Queue:
 
     def add_list(self,list):
         for ent in list:
-            self.container.appendleft(ent)
+            # self.container.appendleft(ent)
+            self.enqueue(ent)
 
 if __name__ == '__main__':
     q = Queue()
