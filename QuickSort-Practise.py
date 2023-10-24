@@ -26,8 +26,8 @@ def partition(start, end, elements):
     return end
 
 if __name__ == '__main__':
-    elements = [11, 9, 29, 7, 2, 15, 28]
-    # elements = ["mona", "dhaval", "aamir", "tina", "chang"]
+    # elements = [11, 9, 29, 7, 2, 15, 28]
+    elements = ["mona", "dhaval", "aamir", "tina", "chang"]
     quick_sort(0, len(elements) - 1, elements)
     print(elements)
     tests = [
