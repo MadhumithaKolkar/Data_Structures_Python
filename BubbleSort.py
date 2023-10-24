@@ -1,4 +1,4 @@
-import  time
+import time
 def bubble_Sort(elements):
     size = len(elements)
     swapped = False
