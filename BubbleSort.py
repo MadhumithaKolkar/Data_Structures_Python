@@ -1,3 +1,4 @@
+import  time
 def bubble_Sort(elements):
     size = len(elements)
     swapped = False
@@ -16,6 +17,7 @@ def bubble_Sort(elements):
     if swap_count == 0:
         print(f"{elements} was already sorted to begin with")
 
+
 if __name__=='__main__':
     element_list = [2,5,1,87,2,9,32]
     element_list1 = [1,2,3]
@@ -28,3 +30,13 @@ if __name__=='__main__':
     print(element_list)
     print(element_list1)
     print(element_list2)
+
+    arr = [i for i in range(1000000)]
+
+    start_time = time.time()
+    sorted_arr = bubble_Sort(arr)
+    end_time = time.time()
+    milliseconds = (end_time - start_time) * 1000
+
+    # print("Sorted array:", sorted_arr)
+    print("Time taken {:.6f} milliseconds".format(milliseconds))
