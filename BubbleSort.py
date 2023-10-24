@@ -38,5 +38,5 @@ if __name__=='__main__':
     end_time = time.time()
     milliseconds = (end_time - start_time) * 1000
 
-    # print("Sorted array:", sorted_arr)
+    print("Sorted array:", sorted_arr)
     print("Time taken {:.6f} milliseconds".format(milliseconds))
