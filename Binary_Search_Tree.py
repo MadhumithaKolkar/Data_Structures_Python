@@ -136,4 +136,6 @@ if __name__ == '__main__':
     numbers_tree.delete(213123)
     print(numbers_tree.in_order_traversal())
     numbers_tree.delete(5)
+    numbers_tree.delete(7)
+    numbers_tree.delete(17)
     print(numbers_tree.in_order_traversal())

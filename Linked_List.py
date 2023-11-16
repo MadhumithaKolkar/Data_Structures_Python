@@ -91,7 +91,6 @@ class Linked_List:
         string_in = False
 
         while iteration:
-            print(iteration.data + " XX " +str(data_after))
             if iteration.data == data_after:
                 iteration.next = Node(data_to_insert,iteration.next)
                 string_in = True
