@@ -1,6 +1,7 @@
 def selection_sort(arr):
     size = len(arr)
 
+    # We are keeping it as size-1 because we need a value j which will be an index value after i
     for i in range (size-1):
         min_index = i
         for j in range(min_index+1,size):
