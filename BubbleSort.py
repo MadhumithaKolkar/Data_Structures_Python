@@ -4,7 +4,7 @@ def bubble_Sort(elements):
     swapped = False
     swap_count = 0
 
-    for i in range(size-1):
+    for i in range(size):
         for j in range(size-1-i):
             if elements[j]>elements[j+1]:
                 tmp = elements[j]
@@ -14,8 +14,9 @@ def bubble_Sort(elements):
                 swap_count += 1
         if not swapped:
             break
-    if swap_count == 0:
-        print(f"{elements} was already sorted to begin with")
+    return elements
+    # if swap_count == 0:
+    #     print(f"{elements} was already sorted to begin with")
 
 
 if __name__=='__main__':
@@ -23,13 +24,13 @@ if __name__=='__main__':
     element_list1 = [1,2,3]
     element_list2 = ['hello','what','is','your','name']
 
-    bubble_Sort(element_list)
+    print(bubble_Sort(element_list))
     bubble_Sort(element_list1)
     bubble_Sort(element_list2)
 
-    print(element_list)
-    print(element_list1)
-    print(element_list2)
+    # print(element_list)
+    # print(element_list1)
+    # print(element_list2)
 
     arr = [i for i in range(1000000)]
 
@@ -38,5 +39,5 @@ if __name__=='__main__':
     end_time = time.time()
     milliseconds = (end_time - start_time) * 1000
 
-    print("Sorted array:", sorted_arr)
-    print("Time taken {:.6f} milliseconds".format(milliseconds))
+    # print("Sorted array:", sorted_arr)
+    # print("Time taken {:.6f} milliseconds".format(milliseconds))
