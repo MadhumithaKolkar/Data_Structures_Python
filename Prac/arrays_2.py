@@ -90,6 +90,46 @@ def intersection(n1,n2):
 
     return ans
 
+def missing(nums,n):
+    xor1 = 0
+    xor2 = 0
+    for i in range(len(nums)):
+        xor1 = xor1^(i+1)
+        xor2 = xor2^(nums[i])
+    return xor1^xor2^n
+
+def once_element(nums):
+    # count_map = {}
+    #
+    # for num in nums:
+    #     count_map[num] = 1+count_map.get(num,0)
+    #
+    # for num,count in count_map.items():
+    #     if count == 1:
+    #         return num
+    #
+    # return -1
+    xor = 0
+    for num in nums:
+        xor = xor^num
+    return xor
+
+def longest_subarray(nums,k):
+    maxL = 0
+    length = 0
+    i = 0
+    sum = 0
+
+    for j in range(len(nums)):
+        sum += nums[j]
+        while sum>k and i<j:
+            sum -= nums[i]
+            i += 1
+        if sum == k:
+            length = j-i+1
+            maxL = max(maxL,length)
+    return maxL
+
 
 # arr = [1, 2, 3, 4, 5, 6, 7]
 # # print(left(arr))
@@ -101,3 +141,13 @@ arr2 = [2, 4, 6]
 print(union(arr1,arr2))
 print(inter(arr1,arr2))
 print(intersection(arr1,arr2))
+nums = [1,2,4,5]
+n = 5
+print(missing(nums,n))
+
+nums = [1,2,2,4,5,4,1,3,5]
+print(f"The number appearing only once is : {once_element(nums)}")
+
+nums = [1,2,3,1,1,1,1,4,2,3]
+k = 4
+print(f"Long : {longest_subarray(nums,5)}")
