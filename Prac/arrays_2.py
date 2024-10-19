@@ -115,19 +115,32 @@ def once_element(nums):
     return xor
 
 def longest_subarray(nums,k):
+    # maxL = 0
+    # length = 0
+    # i = 0
+    # sum = 0
+    #
+    # for j in range(len(nums)):
+    #     sum += nums[j]
+    #     while sum>k and i<j:
+    #         sum -= nums[i]
+    #         i += 1
+    #     if sum == k:
+    #         length = j-i+1
+    #         maxL = max(maxL,length)
+    # return maxL
+
     maxL = 0
-    length = 0
-    i = 0
+    hMap = {}
+    hMap[0] = -1
     sum = 0
 
-    for j in range(len(nums)):
-        sum += nums[j]
-        while sum>k and i<j:
-            sum -= nums[i]
-            i += 1
-        if sum == k:
-            length = j-i+1
-            maxL = max(maxL,length)
+    for i in range(len(nums)):
+        sum += nums[i]
+        if sum-k in hMap:
+            maxL = max(maxL,i-hMap[sum-k])
+        if sum not in hMap:
+            hMap[sum] = i
     return maxL
 
 
@@ -150,4 +163,4 @@ print(f"The number appearing only once is : {once_element(nums)}")
 
 nums = [1,2,3,1,1,1,1,4,2,3]
 k = 4
-print(f"Long : {longest_subarray(nums,5)}")
+print(f"Long : {longest_subarray(nums,6)}")
