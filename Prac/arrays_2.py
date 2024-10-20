@@ -161,6 +161,6 @@ print(missing(nums,n))
 nums = [1,2,2,4,5,4,1,3,5]
 print(f"The number appearing only once is : {once_element(nums)}")
 
-nums = [1,2,3,1,1,1,1,4,2,3]
+nums = [1,2,-3,1,2]
 k = 4
-print(f"Long : {longest_subarray(nums,6)}")
+print(f"Long : {longest_subarray(nums,3)}")
