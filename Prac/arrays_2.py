@@ -143,6 +143,15 @@ def longest_subarray(nums,k):
             hMap[sum] = i
     return maxL
 
+def zeros(arr):
+    k = 0
+    for i in range(3):
+        for j in range(k,len(nums)):
+            while nums[j]==i and k<j:
+                k += 1
+                nums[k],nums[j] = nums[j],nums[k]
+    return nums
+
 
 # arr = [1, 2, 3, 4, 5, 6, 7]
 # # print(left(arr))
@@ -164,3 +173,5 @@ print(f"The number appearing only once is : {once_element(nums)}")
 nums = [1,2,-3,1,2]
 k = 4
 print(f"Long : {longest_subarray(nums,3)}")
+
+print(zeros([0,1,2,0,1,2,1,2,0,0,0,1]))
