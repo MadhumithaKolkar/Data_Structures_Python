@@ -51,6 +51,8 @@ if __name__ == '__main__':
         ("Dubai", "Madagascar"),
         ("Paris", "Dublin"),
         ("Dublin", "Madagascar")
+
+
     ]
 
     route_graph = Graph(routes)

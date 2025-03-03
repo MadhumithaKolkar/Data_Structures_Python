@@ -119,6 +119,7 @@ class Linked_List:
 
 if __name__ == '__main__':
     ll = Linked_List()
+    ll.insert_at_start(2)
     ll.add_list(['Hello','What','are','you','1'])
     ll.print()
     ll.insert_at(2,'Bug')

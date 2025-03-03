@@ -41,4 +41,5 @@ if __name__ == '__main__':
     q.enqueue(7)
     print(q.is_empty())
     print(q.container)
+    print(q.peek())
 
